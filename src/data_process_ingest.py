@@ -4,7 +4,7 @@ from pyspark.sql.utils import AnalysisException
 from loguru import logger
 import yaml
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, FloatType, ArrayType, IntegerType
+from pyspark.sql.types import StructType, StructField, StringType, FloatType
 from pyspark.sql.functions import col, when
 from pyspark.sql.functions import lit
 
