@@ -16,7 +16,7 @@ connector_config:
   executor_memoryOverhea: 2g
   repartition: 10
   key_path: my-file.json #(service acount file name and location)
-  project_id: calm-catfish-406404
-  dataset_id: Nabin09
+  project_id: 
+  dataset_id: 
   bq_table_name: testtable
   target_id: ID
