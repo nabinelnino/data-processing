@@ -1,0 +1,22 @@
+---
+connector_config:
+  type: gcp
+  bucket_name: nabin-lab
+  search_folder: ./data #for local data
+  # search_folder: GCP # if you want to load from GCP bucket
+  download_command: LATEST
+  download_file_list:
+  ignore_duplicates: True
+  persistence_file_path: ./process_data/download_data.yaml
+  file_extension: .tsv.gz
+  output_dir: downloads
+  delete_consumed_files: True
+  executor_memory: 4g
+  driver_memory: 4g
+  executor_memoryOverhea: 2g
+  repartition: 10
+  key_path: my-file.json #(service acount file name and location)
+  project_id: calm-catfish-406404
+  dataset_id: Nabin09
+  bq_table_name: testtable
+  target_id: ID

@@ -1,0 +1,10 @@
+persistence_file_path: "./data"
+
+sample_data: #name of the files to generate and store sample data
+  file_nameNabin.gz: 1000
+  file_name222.gz: 1500
+ 
+
+delete_consumed_files: False
+
+batch_size: 100MB
