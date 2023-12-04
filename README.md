@@ -11,8 +11,8 @@
 
 #### Installation
 
-- Clone the repository: - git clone https://github.com/your-username/your-repository.git
-- cd your-repository
+- Clone the repository: - git clone git@github.com:nabinelnino/data-processing.git
+- cd data-processing
 - create venv
 - Install dependencies: pip install -r requirements.txt
 
@@ -20,9 +20,10 @@
 
 - The `Create_data.py` file has class `CreateSampleData` script generates sample data and stores it in compressed tab-separated values (tsv) files. It utilizes the pandas library to create DataFrames and writes the data to gzip-compressed tsv files.
 - You can set the name of compressed tsv file, rows size and store location in info_config.yaml file
-- to run: python create_data.py
+- to run: cd to src and run python create_data.py
 
 2. Process Module (final.py)
+- python final.py
 
 ## Overview
 
