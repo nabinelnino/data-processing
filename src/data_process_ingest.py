@@ -96,15 +96,18 @@ class GetLoadData(SourceConnector):
                 os.makedirs(output_dir)
             df_zipped = self.spark.read.format("csv").option(
                 "delimiter", "\t").option("header", True).load(filename)
+            df_zipped = df_zipped.withColumn('MW',df_zipped['MW'].cast(FloatType()))
+            df_zipped = df_zipped.withColumn('LogP',df_zipped['LogP'].cast(FloatType()))
 
             # Check for missing columns and add them with None values
             columns_to_add = (
                 set(schema.fieldNames()) - set(df_zipped.columns))
+            expected_schema = schema.fieldNames()
 
             if columns_to_add:
-                for column in columns_to_add:
-                    df_zipped = df_zipped.withColumn(
-                        column, lit(None).cast(schema[column].dataType))
+                for column in expected_schema:
+                        if column not in df_zipped.columns:
+                            df_zipped = df_zipped.withColumn(column, lit(None))
 
             df_repartitioned = df_zipped.repartition(10)
 
